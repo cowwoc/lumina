@@ -1,0 +1,117 @@
+<?xml version="1.0" ?>
+<!--
+  Copyright (c) 2024 Gili Tzabari
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  -->
+<ruleset name="cowwoc"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+	<description>cowwoc's preferred rules</description>
+	<rule ref="category/java/bestpractices.xml">
+		<exclude name="AvoidReassigningParameters"/>
+		<exclude name="LiteralsFirstInComparisons"/>
+		<exclude name="UseVarargs"/>
+		<exclude name="GuardLogStatement"/>
+	</rule>
+	<rule ref="category/java/codestyle.xml">
+		<exclude name="UselessParentheses"/>
+		<exclude name="MethodArgumentCouldBeFinal"/>
+		<exclude name="LocalVariableCouldBeFinal"/>
+		<exclude name="OnlyOneReturn"/>
+		<exclude name="FieldDeclarationsShouldBeAtStartOfClass"/>
+		<exclude name="ShortVariable"/>
+		<exclude name="LongVariable"/>
+		<exclude name="UnnecessaryConstructor"/>
+		<exclude name="ControlStatementBraces"/>
+		<exclude name="EmptyControlStatement"/>
+		<exclude name="CallSuperInConstructor"/>
+		<exclude name="CommentDefaultAccessModifier"/>
+		<exclude name="AvoidUsingNativeCode"/>
+		<exclude name="TooManyStaticImports"/>
+		<exclude name="LinguisticNaming"/>
+		<exclude name="ShortClassName"/>
+		<exclude name="UnnecessaryLocalBeforeReturn"/>
+	</rule>
+	<rule ref="category/java/design.xml">
+		<exclude name="LawOfDemeter"/>
+		<exclude name="LoosePackageCoupling"/>
+		<exclude name="AvoidThrowingNullPointerException"/>
+		<exclude name="ExcessiveImports"/>
+		<exclude name="DataClass"/>
+		<exclude name="GodClass"/>
+		<exclude name="TooManyMethods"/>
+		<exclude name="AvoidCatchingGenericException"/>
+		<exclude name="SignatureDeclareThrowsException"/>
+		<exclude name="ExcessiveParameterList"/>
+		<exclude name="UseObjectForClearerAPI"/>
+		<exclude name="CouplingBetweenObjects"/>
+		<exclude name="TooManyFields"/>
+		<!-- Too vague to tune -->
+		<exclude name="CognitiveComplexity"/>
+		<exclude name="CyclomaticComplexity"/>
+		<exclude name="NPathComplexity"/>
+	</rule>
+	<rule ref="category/java/documentation.xml">
+		<exclude name="UncommentedEmptyConstructor"/>
+		<exclude name="UncommentedEmptyMethodBody"/>
+	</rule>
+	<rule ref="category/java/documentation.xml/CommentRequired">
+		<properties>
+			<property name="methodWithOverrideCommentRequirement" value="Ignored"/>
+			<property name="accessorCommentRequirement" value="Ignored"/>
+			<property name="classCommentRequirement" value="Ignored"/>
+			<property name="fieldCommentRequirement" value="Ignored"/>
+			<property name="publicMethodCommentRequirement" value="Required"/>
+			<property name="protectedMethodCommentRequirement" value="Ignored"/>
+			<property name="enumCommentRequirement" value="Ignored"/>
+			<property name="serialVersionUIDCommentRequired" value="Ignored"/>
+			<property name="serialPersistentFieldsCommentRequired" value="Ignored"/>
+		</properties>
+	</rule>
+	<rule ref="category/java/documentation.xml/CommentSize">
+		<properties>
+			<property name="maxLines" value="20"/>
+			<property name="maxLineLength" value="110"/>
+		</properties>
+	</rule>
+	<rule ref="category/java/errorprone.xml">
+		<exclude name="AvoidFieldNameMatchingMethodName"/>
+		<exclude name="AvoidLiteralsInIfCondition"/>
+		<exclude name="AvoidDuplicateLiterals"/>
+		<exclude name="NullAssignment"/>
+		<exclude name="SuspiciousEqualsMethodName"/>
+		<exclude name="CompareObjectsWithEquals"/>
+	</rule>
+	<rule ref="category/java/errorprone.xml/EmptyCatchBlock">
+		<properties>
+			<property name="allowCommentedBlocks" value="true"/>
+		</properties>
+	</rule>
+	<rule ref="category/java/errorprone.xml/TestClassWithoutTestCases">
+		<properties>
+			<property name="testClassPattern" value="^^(?:.*\.)?.*Tests?$|^(?:.*\.)?.*TestCase$"/>
+		</properties>
+	</rule>
+	<rule ref="category/java/multithreading.xml">
+		<exclude name="UseConcurrentHashMap"/>
+		<exclude name="DoNotUseThreads"/>
+	</rule>
+	<rule ref="category/java/performance.xml">
+		<exclude name="AvoidInstantiatingObjectsInLoops"/>
+		<exclude name="ConsecutiveLiteralAppends"/>
+		<exclude name="TooFewBranchesForASwitchStatement"/>
+	</rule>
+	<rule ref="category/java/security.xml"/>
+</ruleset>

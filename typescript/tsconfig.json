@@ -1,0 +1,31 @@
+{
+	// Based on https://stackoverflow.com/a/61305579/14731, @tsconfig/node14/tsconfig.json and
+	// https://iamturns.com/typescript-babel/
+	"compilerOptions": {
+		"preserveConstEnums": true,
+		"allowSyntheticDefaultImports": true,
+		"target": "ES2022",
+		"lib": [
+			"DOM",
+			"ES2022"
+		],
+		"module": "Node16",
+		"moduleResolution": "Node16",
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"verbatimModuleSyntax": true,
+		// Required by C8
+		"sourceMap": true
+	},
+	"include": [
+		// Files used to generate the target directory
+		"./src",
+		"./build"
+	],
+	"exclude": [
+		"node_modules",
+		"target",
+		"./.eslintrc.mjs"
+	],
+	"declaration": true
+}
